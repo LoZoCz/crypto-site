@@ -29,7 +29,6 @@ Na stronie kryptowaluty dostępny jest interaktywny wykres, prezentujący histor
 Projekt został zrealizowany przy użyciu technologii:
 
 - Frontend: React TypeScript, SCSS, Tailwind CSS
-- Backend: Node.js z wykorzystaniem Express
 - Komunikacja z API kryptowalut: Fetch API, Axios
 
 ### Pobieranie Danych z API
