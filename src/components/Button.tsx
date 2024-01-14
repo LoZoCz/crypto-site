@@ -4,13 +4,7 @@ type ButtonProps = {
 };
 
 const Button = ({ title, addClasses }: ButtonProps) => {
-  return (
-    <button
-      className={`main__nav-btn register-btn btn ${addClasses?.join(" ")}`}
-    >
-      {title}
-    </button>
-  );
+  return <button className={`btn ${addClasses?.join(" ")}`}>{title}</button>;
 };
 
 export default Button;

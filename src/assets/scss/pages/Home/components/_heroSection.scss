@@ -1,0 +1,42 @@
+@use "../../../abstracts" as *;
+
+.hero__sect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vw;
+  height: $sectionSize;
+
+  &-img {
+    height: 40%;
+  }
+
+  &-typo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &-title {
+    margin: 0;
+    max-width: 34ch;
+    text-align: center;
+  }
+
+  &-desc {
+    color: $color-text;
+    margin: 0;
+    max-width: 80ch;
+    text-align: center;
+  }
+
+  &-btn-wrapper {
+    display: flex;
+    gap: 1rem;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}

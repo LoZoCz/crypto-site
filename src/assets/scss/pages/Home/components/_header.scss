@@ -1,14 +1,15 @@
-@use "../../abstracts" as *;
+@use "../../../abstracts" as *;
 
 .main__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 3rem;
-  height: 8rem;
-  position: relative;
+  height: $headerSize;
+  z-index: 9999;
 
-  &-logo {
+  &-logo,
+  .nav__logo {
     width: 5rem;
     aspect-ratio: 1;
 
@@ -22,7 +23,17 @@
   }
 
   .main__nav {
-    .hamburger-btn {
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 3rem;
+      width: 100%;
+      height: $headerSize;
+    }
+
+    .hamburger-btn,
+    .nav__logo {
       aspect-ratio: 1;
       display: none;
 
@@ -38,38 +49,32 @@
       align-items: center;
       margin: 0;
       padding: 0;
+      transform-origin: top;
 
       @include tablet {
-        --delay: 125ms;
-
         flex-direction: column;
-        align-items: end;
+        align-items: center;
         position: absolute;
-        top: 100%;
-        right: 3rem;
-        transition: all 200ms ease-in-out;
-
-        @for $i from 1 through 5 {
-          &.close {
-            .main__nav-item:nth-child(#{$i}) {
-              transform: translateX(25rem);
-              transition: all 200ms ease-in-out, calc($i * var(--delay));
-            }
-          }
-
-          &.open {
-            .main__nav-item:nth-child(#{$i}) {
-              transform: translateX(0rem);
-              transition: all 200ms ease-in-out, calc($i * var(--delay));
-            }
-          }
-        }
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 2rem;
+        background-color: lighten($color-background, 5%);
+        z-index: 999;
       }
     }
 
     &-item {
       display: flex;
       gap: 1rem;
+      font-size: 0.75rem;
+      font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
+
+      @include tablet {
+        font-size: 1rem;
+        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+      }
 
       .nav__item-icon {
         display: none;

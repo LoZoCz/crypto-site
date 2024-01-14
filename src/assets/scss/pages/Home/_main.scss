@@ -1,5 +1,4 @@
 @use "../../abstracts" as *;
-@forward "./header";
 
 body {
   background: url("src/assets/images/pictures/bg-effect.svg") $color-background;
@@ -7,33 +6,10 @@ body {
   background-size: cover;
   color: $color-text;
   font-family: $font-inter-regular;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 html,
 body {
   overflow-x: hidden;
-}
-
-.main-grid {
-  --padding-inline: 2rem;
-  --content-width: 120ch;
-
-  display: grid;
-  grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr)
-    [content-start] min(
-      100% - (var(--padding-inline) * 2),
-      var(--content-width)
-    )
-    [content-end]
-    minmax(var(--padding-inline), 1fr) [full-width-end];
-}
-
-.content-grid {
-  grid-column: content;
-}
-
-.full-width {
-  grid-column: full-width;
 }
