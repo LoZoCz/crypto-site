@@ -5,22 +5,22 @@ import exchangeIcon from "../assets/images/icons/briefcase.svg";
 
 const headerLinks = [
   {
-    title: "Home",
+    title: "Strona główna",
     path: "/",
     iconSrc: homeIcon,
   },
   {
-    title: "About",
+    title: "O nas",
     path: "/about",
     iconSrc: aboutIcon,
   },
   {
-    title: "Cryptocurrencies",
+    title: "Kryptowaluty",
     path: "/crypto",
     iconSrc: cryptoIcon,
   },
   {
-    title: "Exchanges",
+    title: "Giełdy",
     path: "/exchange",
     iconSrc: exchangeIcon,
   },

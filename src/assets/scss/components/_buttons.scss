@@ -37,7 +37,7 @@
 }
 
 .secondary-btn {
-  background-color: $color-primary;
+  background-color: $color-secondary;
   position: relative;
 
   &::after {
@@ -58,6 +58,6 @@
   }
 
   &:hover {
-    background-color: $color-secondary;
+    background-color: $color-primary;
   }
 }

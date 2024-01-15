@@ -1,8 +1,10 @@
 .main-grid {
   --padding-inline: 2rem;
   --content-width: 150ch;
+  --row-gap: 4rem;
 
   display: grid;
+  row-gap: var(--row-gap);
   grid-template-columns:
     [full-width-start] minmax(var(--padding-inline), 1fr)
     [content-start] min(

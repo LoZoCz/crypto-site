@@ -1,0 +1,60 @@
+@use "../../../abstracts" as *;
+
+.offer__sect {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+
+  &-title {
+    max-width: 20ch;
+    margin: 0;
+  }
+
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 26rem);
+    place-items: center;
+    gap: 4rem;
+
+    @include tablet {
+      grid-template-columns: repeat(1, 35rem);
+      grid-template-rows: repeat(3, 1fr);
+      align-self: center;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+
+  &-card {
+    background: color-mix(in srgb, $color-secondary 30%, transparent);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+
+    &-title,
+    &-text {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  &-icon {
+    width: 8rem;
+    aspect-ratio: 1;
+
+    @include mobile {
+      width: 6rem;
+    }
+  }
+}

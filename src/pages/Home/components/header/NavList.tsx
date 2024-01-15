@@ -1,9 +1,9 @@
-import headerLinks from "../../../utils/headerLinks";
-import logo from "../../../assets/images/icons/icon.svg";
-import openIcon from "../../../assets/images/icons/menu.svg";
-import closeIcon from "../../../assets/images/icons/close.svg";
+import headerLinks from "../../../../utils/headerLinks";
+import logo from "../../../../assets/images/icons/icon.svg";
+import openIcon from "../../../../assets/images/icons/menu.svg";
+import closeIcon from "../../../../assets/images/icons/close.svg";
 import { useEffect, useState } from "react";
-import Button from "../../../components/Button";
+import Button from "../../../../components/Button";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -33,13 +33,15 @@ const NavList = () => {
     animate: {
       y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.5,
+        ease: [0.79, 0.14, 0.15, 0.86],
       },
     },
     exit: {
       y: "-100%",
       transition: {
-        duration: 0.3,
+        duration: 0.5,
+        ease: [0.79, 0.14, 0.15, 0.86],
       },
     },
   };

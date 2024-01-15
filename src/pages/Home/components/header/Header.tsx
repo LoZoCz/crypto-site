@@ -1,4 +1,4 @@
-import logo from "../../../assets/images/icons/icon.svg";
+import logo from "../../../../assets/images/icons/icon.svg";
 import NavList from "./NavList";
 
 const Header = () => {
@@ -13,7 +13,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//?jesli to mozliwe popracuj nad aniamcja navbara
-
-//TODO zrob kolejna sekcje strony
