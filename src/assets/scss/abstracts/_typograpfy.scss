@@ -4,7 +4,7 @@ h1,
 .h1 {
   font-family: $font-monument-ultra-bold;
   line-height: 1.25;
-  letter-spacing: 0.1px;
+  letter-spacing: 1px;
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
 }
@@ -13,7 +13,7 @@ h2,
 .h2 {
   font-family: $font-monument-ultra-bold;
   line-height: 1.25;
-  letter-spacing: 0.1px;
+  letter-spacing: 1px;
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
 }
@@ -23,7 +23,8 @@ h3,
   font-family: $font-monument-regular;
   line-height: 1.25;
   font-size: 1.12rem;
-  font-size: clamp(1.12rem, 1rem + 0.625vw, 1.75rem);
+  font-size: clamp(1.12rem, 1rem + 0.625vw, 1.6rem);
+  font-weight: 400;
 }
 
 h4,

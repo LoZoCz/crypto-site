@@ -5,7 +5,7 @@ import exchangeIcon from "../../../assets/images/icons/exchange.svg";
 const OfferSection = () => {
   return (
     <section className="offer__sect content-grid">
-      <h2 className="offer__sect-title h1">
+      <h2 className="offer__sect-title h2">
         Co możesz robić na naszej stronie?
       </h2>
       <div className="offer__sect-cards">

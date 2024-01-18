@@ -1,0 +1,95 @@
+@use "../../../abstracts" as *;
+
+.accordion__sect {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+
+  &-title {
+    margin: 0;
+    max-width: 30ch;
+  }
+
+  &-content {
+    display: flex;
+    gap: 3rem;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-img {
+    flex-grow: 1;
+    flex-basis: 50%;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .accordion {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 50%;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &-item {
+      background: color-mix(in srgb, $color-secondary 30%, transparent);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    &-header,
+    &-title {
+      display: flex;
+      align-items: center;
+    }
+
+    &-header {
+      gap: 1rem;
+
+      &.open {
+        margin-bottom: 0.25rem;
+        transition: all 0.25s ease-in-out;
+      }
+    }
+
+    &-title {
+      gap: 0.5rem;
+    }
+
+    &-icon {
+      aspect-ratio: 1;
+      width: 1.5rem;
+    }
+
+    &-title-text {
+      margin: 0;
+    }
+
+    &-content {
+      margin: 0;
+    }
+  }
+}

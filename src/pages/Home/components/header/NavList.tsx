@@ -1,4 +1,4 @@
-import headerLinks from "../../../../utils/headerLinks";
+import headerLinks from "../../utils/headerLinks";
 import logo from "../../../../assets/images/icons/icon.svg";
 import openIcon from "../../../../assets/images/icons/menu.svg";
 import closeIcon from "../../../../assets/images/icons/close.svg";
