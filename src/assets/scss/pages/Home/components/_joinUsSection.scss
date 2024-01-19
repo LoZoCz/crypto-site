@@ -1,0 +1,57 @@
+@use "../../../abstracts" as *;
+
+.joinUs__sect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-body {
+    background-image: url("src/assets/images/pictures/LineJoinBG.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 80%;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &-img {
+    width: 40%;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1,
+    p {
+      margin: 0;
+    }
+  }
+
+  &-btn {
+    align-self: start;
+    padding: 0.75rem 1.25rem;
+
+    @include mobile {
+      align-self: stretch;
+    }
+  }
+}

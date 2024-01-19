@@ -50,9 +50,6 @@
     }
 
     &-item {
-      background: color-mix(in srgb, $color-secondary 30%, transparent);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
       border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
@@ -68,6 +65,7 @@
 
     &-header {
       gap: 1rem;
+      cursor: pointer;
 
       &.open {
         margin-bottom: 0.25rem;

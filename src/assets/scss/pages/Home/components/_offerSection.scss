@@ -30,9 +30,6 @@
   }
 
   &-card {
-    background: color-mix(in srgb, $color-secondary 30%, transparent);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -41,6 +38,14 @@
     padding: 2rem;
     height: 100%;
     width: 100%;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        background-image: url("src/assets/images/pictures/LineEffectCard#{$i}.svg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
 
     &-title,
     &-text {

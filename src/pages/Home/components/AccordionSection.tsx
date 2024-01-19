@@ -54,7 +54,7 @@ const AccordionSection = () => {
         <div className="accordion__section-wrapper accordion">
           <AnimatePresence>
             {accordionContent.map((item, index) => (
-              <div key={index} className="accordion-item">
+              <div key={index} className="accordion-item glassyBg">
                 <div
                   className={`accordion-header ${
                     isOpen === index ? "open" : ""
