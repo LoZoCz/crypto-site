@@ -1,7 +1,10 @@
 import Button from "../../../components/Button";
 import heroImg from "../../../assets/images/pictures/heroImage.svg";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="hero__sect content-grid">
       <div className="hero__sect-typo">
@@ -17,10 +20,13 @@ const HeroSection = () => {
           <Button
             title="About us"
             addClasses={["hero__sect-btn", "primary-btn", "h4"]}
+            clickFunc={() => navigate("/about")}
           />
+
           <Button
             title="Explore"
             addClasses={["hero__sect-btn", "secondary-btn", "h4"]}
+            clickFunc={() => navigate("/cryptoList")}
           />
         </div>
       </div>

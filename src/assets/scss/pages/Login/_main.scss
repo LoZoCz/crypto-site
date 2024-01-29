@@ -1,0 +1,83 @@
+@use "../../abstracts/" as *;
+
+.login__main {
+  height: calc(100vh - #{$headerSize});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  &-title {
+    max-width: 15ch;
+    text-align: center;
+  }
+
+  &-inpBox {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &-loginInpBox,
+  &-passInpBox {
+    display: flex;
+    border: 1px solid lighten($color-secondary, 25%);
+    border-radius: 0.25rem;
+    transition: all 200ms ease-in-out;
+
+    &:has(input:focus) {
+      border: 1px solid $color-accent;
+    }
+  }
+
+  &-textInp {
+    background-color: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    color: $color-text;
+    padding: 0.75rem 0.5rem;
+    outline: none;
+    width: 100%;
+    font-size: 1.15rem;
+    font-size: clamp(1.15rem, 0.7rem + 0.25vw, 1.35rem);
+
+    transition: all 200ms ease-in-out;
+
+    &::placeholder {
+      color: lighten($color-secondary, 25%);
+    }
+  }
+
+  .passInp__btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &-btnBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-link {
+    color: lighten($color-secondary, 25%);
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,16 +1,21 @@
-import headerLinks from "../../utils/headerLinks";
-import logo from "../../../../assets/images/icons/icon.svg";
-import openIcon from "../../../../assets/images/icons/menu.svg";
-import closeIcon from "../../../../assets/images/icons/close.svg";
+import headerLinks from "../../pages/Home/utils/headerLinks";
+import logo from "../../assets/images/icons/icon.svg";
+import openIcon from "../../assets/images/icons/menu.svg";
+import closeIcon from "../../assets/images/icons/close.svg";
 import { useEffect, useState } from "react";
-import Button from "../../../../components/Button";
-import { Link } from "react-router-dom";
+import Button from "../Button";
+import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import NotAnimatedNav from "./NotAnimatedNav";
 
 const NavList = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -19,26 +24,32 @@ const NavList = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
-    windowWidth < 1120 ? setIsMenuOpen(false) : setIsMenuOpen(true);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth < 1120) {
+      setIsMenuOpen(false);
+    } else {
+      setIsMenuOpen(true);
+    }
   }, [windowWidth]);
 
   const menuVariants = {
     initial: {
-      y: "-100%",
+      x: windowWidth * -1,
     },
     animate: {
-      y: 0,
+      x: 1,
       transition: {
         duration: 0.5,
         ease: [0.79, 0.14, 0.15, 0.86],
       },
     },
     exit: {
-      y: "-100%",
+      x: windowWidth * -1,
       transition: {
         duration: 0.5,
         ease: [0.79, 0.14, 0.15, 0.86],
@@ -90,37 +101,18 @@ const NavList = () => {
               <Button
                 title="Register"
                 addClasses={["main__nav-btn", "register-btn", "primary-btn"]}
+                clickFunc={() => navigate("/register")}
+              />
+              <Button
+                title="Login"
+                addClasses={["main__nav-btn", "register-btn", "primary-btn"]}
+                clickFunc={() => navigate("/login")}
               />
             </li>
           </motion.ul>
         )}
       </AnimatePresence>
     </>
-  );
-};
-
-const NotAnimatedNav = () => {
-  return (
-    <ul className="main__nav-list">
-      {headerLinks.map((link) => (
-        <li className="main__nav-item" key={link.title}>
-          <Link to={link.path} className="nav__item-link">
-            {link.title}
-          </Link>
-          <img
-            src={link.iconSrc}
-            alt={`${link.title} icon`}
-            className="nav__item-icon"
-          />
-        </li>
-      ))}
-      <li className="main__nav-item">
-        <Button
-          title="Register"
-          addClasses={["main__nav-btn", "register-btn", "primary-btn"]}
-        />
-      </li>
-    </ul>
   );
 };
 

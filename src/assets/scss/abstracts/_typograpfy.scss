@@ -2,41 +2,46 @@
 
 h1,
 .h1 {
-  font-family: $font-monument-ultra-bold;
+  font-family: $font-monument-ultra-bold, system-ui, sans-serif;
   line-height: 1.25;
   letter-spacing: 1px;
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
+  margin: 0;
 }
 
 h2,
 .h2 {
-  font-family: $font-monument-ultra-bold;
+  font-family: $font-monument-ultra-bold, system-ui, sans-serif;
   line-height: 1.25;
   letter-spacing: 1px;
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+  margin: 0;
 }
 
 h3,
 .h3 {
-  font-family: $font-monument-regular;
+  font-family: $font-monument-regular, system-ui, sans-serif;
   line-height: 1.25;
   font-size: 1.12rem;
   font-size: clamp(1.12rem, 1rem + 0.625vw, 1.6rem);
   font-weight: 400;
+  margin: 0;
 }
 
 h4,
 .h4 {
-  font-family: $font-inter-regular;
+  font-family: $font-inter-regular, system-ui, sans-serif;
   font-size: 1rem;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+  margin: 0;
 }
 
 p,
 .p {
-  font-family: $font-inter-regular;
+  font-family: $font-inter-regular, system-ui, sans-serif;
   font-size: 0.75rem;
-  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1.4rem);
+  margin: 0;
 }

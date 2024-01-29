@@ -7,7 +7,6 @@
   justify-content: center;
 
   &-title {
-    margin: 0;
     max-width: 30ch;
   }
 
@@ -80,14 +79,6 @@
     &-icon {
       aspect-ratio: 1;
       width: 1.5rem;
-    }
-
-    &-title-text {
-      margin: 0;
-    }
-
-    &-content {
-      margin: 0;
     }
   }
 }

@@ -40,10 +40,6 @@
     }
   }
 
-  &-title {
-    margin: 0;
-  }
-
   .social__list,
   .links__list {
     display: flex;
@@ -123,12 +119,13 @@
       @include mobile {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+        gap: 0.5rem;
       }
     }
 
     &-inp {
       background-color: transparent;
-      color: lighten($color-secondary, 25%);
+      color: $color-text;
       border: 1px solid lighten($color-secondary, 25%);
       border-radius: 0.25rem;
       padding: 0.05rem 0.25rem;

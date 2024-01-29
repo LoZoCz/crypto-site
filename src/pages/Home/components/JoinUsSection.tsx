@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import joinusImg from "../../../assets/images/pictures/joinusImg.svg";
 import Button from "../../../components/Button";
 
 const JoinUsSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="joinUs__sect content-grid">
       <div className="joinUs__sect-body glassyBg">
@@ -17,6 +20,7 @@ const JoinUsSection = () => {
           <Button
             title="Dołącz Teraz"
             addClasses={["joinUs__sect-btn", "primary-btn", "h3"]}
+            clickFunc={() => navigate("/register")}
           />
         </div>
       </div>

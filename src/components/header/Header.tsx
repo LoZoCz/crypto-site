@@ -1,4 +1,4 @@
-import logo from "../../../../assets/images/icons/icon.svg";
+import logo from "../../assets/images/icons/icon.svg";
 import NavList from "./NavList";
 
 const Header = () => {
