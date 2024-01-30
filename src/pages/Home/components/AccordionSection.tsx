@@ -4,6 +4,7 @@ import arrowUpIcon from "../../../assets/images/icons/chevron-up.svg";
 import accordionContent from "../utils/accordionContent";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import GlassyBox from "../../../components/GlassyBox";
 
 const AccordionSection = () => {
   const [isOpen, setIsOpen] = useState<number | null>(1);
@@ -54,7 +55,7 @@ const AccordionSection = () => {
         <div className="accordion__section-wrapper accordion">
           <AnimatePresence>
             {accordionContent.map((item, index) => (
-              <div key={index} className="accordion-item glassyBg">
+              <GlassyBox key={index} addClasses={["accordion-item"]}>
                 <div
                   className={`accordion-header ${
                     isOpen === index ? "open" : ""
@@ -86,7 +87,7 @@ const AccordionSection = () => {
                 >
                   {item.content}
                 </motion.p>
-              </div>
+              </GlassyBox>
             ))}
           </AnimatePresence>
         </div>

@@ -2,8 +2,9 @@ import Header from "../../components/header/Header";
 import eyeOffIcon from "../../assets/images/icons/eye-off.svg";
 import eyeOnIcon from "../../assets/images/icons/eye.svg";
 import Button from "../../components/Button";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import UserInput from "../../components/UserInput";
+import UserLink from "../../components/UserLink";
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -25,16 +26,17 @@ const Login = () => {
           <h1 className="login__main-title h1">Witamy z powrotem!</h1>
           <div className="login__main-inpBox">
             <div className="login__main-loginInpBox">
-              <input
-                className="login__main-textInp"
+              <UserInput
                 type="text"
                 placeholder="Login"
+                name="login"
+                addClasses={["login__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
             </div>
             <div className="login__main-passInpBox">
-              <input
-                className="login__main-textInp"
+              <UserInput
+                addClasses={["login__main-textInp"]}
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Hasło"
               />
@@ -55,9 +57,11 @@ const Login = () => {
               title="Zaloguj"
               addClasses={["login__main-btn", "primary-btn", "h4"]}
             />
-            <Link to="/register" className="login__main-link">
-              Nie masz jeszcze konta? Zarejestruj się!
-            </Link>
+            <UserLink
+              content="Nie masz jeszcze konta? Zarejestruj się!"
+              path="/register"
+              addClasses={["login__main-link"]}
+            />
           </div>
         </form>
       </main>

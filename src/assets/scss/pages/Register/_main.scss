@@ -1,6 +1,6 @@
 @use "../../abstracts/" as *;
 
-.login__main {
+.register__main {
   min-height: calc(100vh - #{$headerSize});
   display: flex;
   justify-content: center;
@@ -12,8 +12,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
-    padding: 4rem 1rem;
+    gap: 3rem;
+    padding: 2rem 1rem;
     border-radius: 0.5rem;
   }
 

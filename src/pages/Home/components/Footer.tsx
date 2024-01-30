@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import logo from "../../../assets/images/icons/icon.svg";
 import { socials, siteLinks } from "../utils/footerLinks";
 import Button from "../../../components/Button";
+import UserInput from "../../../components/UserInput";
+import UserLink from "../../../components/UserLink";
 
 const Footer = () => {
   return (
@@ -29,9 +30,11 @@ const Footer = () => {
         <ul className="main__foot-list links__list">
           {siteLinks.map((link, index) => (
             <li key={index} className="links__list-item">
-              <Link className="links__list-link" to={link.path}>
-                {link.title}
-              </Link>
+              <UserLink
+                content={link.title}
+                addClasses={["links__list-link"]}
+                path={link.path}
+              />
             </li>
           ))}
         </ul>
@@ -40,10 +43,9 @@ const Footer = () => {
             Newsletter
           </label>
           <div className="newsletter__form-uses">
-            <input
+            <UserInput
               type="email"
-              id="newsletter-inp"
-              className="newsletter__form-inp"
+              addClasses={["newsletter__form-inp"]}
               placeholder="Wprowadź swój mail"
             />
             <Button

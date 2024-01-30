@@ -1,3 +1,4 @@
+import GlassyBox from "../../../components/GlassyBox";
 import cardsContent from "../utils/cardsContent";
 
 const OfferSection = () => {
@@ -8,7 +9,7 @@ const OfferSection = () => {
       </h2>
       <div className="offer__sect-cards">
         {cardsContent.map((card, index) => (
-          <div key={index} className="offer__sect-card glassyBg">
+          <GlassyBox key={index} addClasses={["offer__sect-card"]}>
             <img
               src={card.image}
               alt="card icon"
@@ -16,7 +17,7 @@ const OfferSection = () => {
             />
             <h3 className="offer__sect-card-title h3">{card.title}</h3>
             <p className="offer__sect-card-text p">{card.content}</p>
-          </div>
+          </GlassyBox>
         ))}
       </div>
     </section>
