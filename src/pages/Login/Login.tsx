@@ -30,6 +30,7 @@ const Login = () => {
                 type="text"
                 placeholder="Login"
                 name="login"
+                id="login-inp"
                 addClasses={["login__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
@@ -39,6 +40,8 @@ const Login = () => {
                 addClasses={["login__main-textInp"]}
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Hasło"
+                name="password"
+                id="passwd-inp"
               />
               <button
                 onClick={() => setPasswordVisible(!passwordVisible)}

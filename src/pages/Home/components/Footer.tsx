@@ -47,6 +47,8 @@ const Footer = () => {
               type="email"
               addClasses={["newsletter__form-inp"]}
               placeholder="Wprowadź swój mail"
+              id="newsletter-inp"
+              name="newsletter"
             />
             <Button
               title="Zasubskrybuj"

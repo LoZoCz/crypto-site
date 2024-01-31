@@ -31,6 +31,7 @@ const Register = () => {
                 type="text"
                 placeholder="Login"
                 name="login"
+                id="login-inp"
                 addClasses={["register__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
@@ -40,6 +41,7 @@ const Register = () => {
                 type="email"
                 placeholder="E-mail"
                 name="mail"
+                id="mail-inp"
                 addClasses={["register__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
@@ -49,6 +51,8 @@ const Register = () => {
                 addClasses={["register__main-textInp"]}
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Hasło"
+                name="password"
+                id="passwd-inp"
               />
               <button
                 onClick={() => setPasswordVisible(!passwordVisible)}
@@ -66,6 +70,8 @@ const Register = () => {
                 addClasses={["register__main-textInp"]}
                 type={repPasswordVisible ? "text" : "password"}
                 placeholder="Powtórz hasło"
+                name="repPassword"
+                id="repPasswd-inp"
               />
               <button
                 onClick={() => setRepPasswordVisible(!repPasswordVisible)}

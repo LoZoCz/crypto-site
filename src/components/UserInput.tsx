@@ -9,6 +9,7 @@ type UserInputProps = {
   placeholder: string;
   error?: boolean;
   disabled?: boolean;
+  id?: string;
   //   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 

@@ -26,3 +26,20 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </Router>
   </React.StrictMode>,
 );
+
+//? jesli to mozliwe popracuj nad aniamcja navbara oraz observerem na scroll
+
+//? dodaj jakies animacje i upiekszenia strony
+
+//TODO responsywnosc na mniejsze ekrany (mniejsza wysokosc ekranu)
+
+//TODO strona `o nas` z komentarzami
+
+//TODO dodac opcje logowania na stronie
+//TODO dodac opcje rejestracji na stronie
+
+//TODO strona dashboardu uzytkownika
+
+//TODO strona z krypto i giełdami
+
+//TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
