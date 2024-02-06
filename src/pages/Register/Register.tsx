@@ -1,10 +1,10 @@
-import Header from "../../components/header/Header";
 import eyeOffIcon from "../../assets/images/icons/eye-off.svg";
 import eyeOnIcon from "../../assets/images/icons/eye.svg";
 import Button from "../../components/Button";
 import UserInput from "../../components/UserInput";
 import { useState } from "react";
 import UserLink from "../../components/UserLink";
+import MainLayout from "../../layouts/MainLayout";
 
 const Register = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,8 +17,7 @@ const Register = () => {
   };
 
   return (
-    <>
-      <Header />
+    <MainLayout>
       <main className="register__main">
         <form
           className="register__main-form glassyBg"
@@ -98,7 +97,7 @@ const Register = () => {
           </div>
         </form>
       </main>
-    </>
+    </MainLayout>
   );
 };
 

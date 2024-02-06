@@ -2,32 +2,21 @@ import headerLinks from "../../pages/Home/utils/headerLinks";
 import logo from "../../assets/images/icons/icon.svg";
 import openIcon from "../../assets/images/icons/menu.svg";
 import closeIcon from "../../assets/images/icons/close.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../Button";
 import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import NotAnimatedNav from "./NotAnimatedNav";
+import { MediaContext } from "../../context/MediaContext";
 
 const NavList = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { windowWidth } = useContext(MediaContext);
   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     if (windowWidth < 1120) {

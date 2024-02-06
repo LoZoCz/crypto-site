@@ -1,10 +1,10 @@
-import Header from "../../components/header/Header";
 import eyeOffIcon from "../../assets/images/icons/eye-off.svg";
 import eyeOnIcon from "../../assets/images/icons/eye.svg";
 import Button from "../../components/Button";
 import { useState } from "react";
 import UserInput from "../../components/UserInput";
 import UserLink from "../../components/UserLink";
+import MainLayout from "../../layouts/MainLayout";
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -16,8 +16,7 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Header />
+    <MainLayout>
       <main className="login__main">
         <form
           className="login__main-form glassyBg"
@@ -68,7 +67,7 @@ const Login = () => {
           </div>
         </form>
       </main>
-    </>
+    </MainLayout>
   );
 };
 

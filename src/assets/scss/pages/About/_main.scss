@@ -1,1 +1,95 @@
 @use "../../abstracts/" as *;
+
+$timelineSize: 5rem;
+$timelineWidth: 3px;
+$timelineColor: lighten($color-accent, 20%);
+
+.about__main {
+  &-title {
+    margin-top: 3rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .timeline__box {
+    display: grid;
+    grid-template-columns: 1fr $timelineSize 1fr;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(fit-content, 1fr);
+      gap: 2rem;
+    }
+
+    &-firstHalf {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      .timeline__box-item::before {
+        right: calc((-1 * #{$timelineSize}) / 2);
+      }
+    }
+
+    &-secondHalf {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding-top: 5rem;
+
+      .timeline__box-item::before {
+        left: calc((-1 * #{$timelineSize}) / 2);
+      }
+    }
+
+    &-middleLineBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-line {
+      height: 100%;
+      width: $timelineWidth;
+      border-radius: 9999rem;
+      background-color: $timelineColor;
+    }
+
+    &-item {
+      padding: 1rem;
+      border-radius: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: $timelineWidth;
+        width: calc(#{$timelineSize} / 2);
+        background-color: $timelineColor;
+
+        @include mobile {
+          $timelineSize: 4rem;
+
+          left: 50%;
+          transform: translateX(-50%) translateY(0%);
+          top: 100%;
+          width: $timelineWidth;
+          height: calc(#{$timelineSize} / 2);
+        }
+      }
+
+      &:last-child {
+        &::before {
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
