@@ -1,7 +1,6 @@
 import eyeOffIcon from "../../assets/images/icons/eye-off.svg";
 import eyeOnIcon from "../../assets/images/icons/eye.svg";
 import Button from "../../components/Button";
-import UserInput from "../../components/UserInput";
 import { useState } from "react";
 import UserLink from "../../components/UserLink";
 import MainLayout from "../../layouts/MainLayout";
@@ -26,28 +25,28 @@ const Register = () => {
           <h1 className="register__main-title h1">Utwórz swoje konto</h1>
           <div className="register__main-inpBox">
             <div className="register__main-loginInpBox">
-              <UserInput
+              <input
+                className="register__main-textInp userInput"
                 type="text"
                 placeholder="Login"
                 name="login"
                 id="login-inp"
-                addClasses={["register__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
             </div>
             <div className="register__main-loginInpBox">
-              <UserInput
+              <input
+                className="register__main-textInp userInput"
                 type="email"
                 placeholder="E-mail"
                 name="mail"
                 id="mail-inp"
-                addClasses={["register__main-textInp"]}
               />
               {/* <p className="login__main-inpError">Error</p> */}
             </div>
             <div className="register__main-passInpBox">
-              <UserInput
-                addClasses={["register__main-textInp"]}
+              <input
+                className="register__main-textInp userInput"
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Hasło"
                 name="password"
@@ -56,6 +55,7 @@ const Register = () => {
               <button
                 onClick={() => setPasswordVisible(!passwordVisible)}
                 className="passInp__btn"
+                type="button"
               >
                 <img
                   src={passwordVisible ? eyeOnIcon : eyeOffIcon}
@@ -65,8 +65,8 @@ const Register = () => {
               {/* <p className="login__main-inpError">Error</p> */}
             </div>
             <div className="register__main-passInpBox">
-              <UserInput
-                addClasses={["register__main-textInp"]}
+              <input
+                className="register__main-textInp userInput"
                 type={repPasswordVisible ? "text" : "password"}
                 placeholder="Powtórz hasło"
                 name="repPassword"
@@ -75,6 +75,7 @@ const Register = () => {
               <button
                 onClick={() => setRepPasswordVisible(!repPasswordVisible)}
                 className="passInp__btn"
+                type="button"
               >
                 <img
                   src={repPasswordVisible ? eyeOnIcon : eyeOffIcon}
@@ -87,6 +88,7 @@ const Register = () => {
           <div className="register__main-btnBox">
             <Button
               title="Zarejestruj"
+              type="submit"
               addClasses={["register__main-btn", "primary-btn", "h4"]}
             />
             <UserLink

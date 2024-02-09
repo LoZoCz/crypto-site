@@ -2,6 +2,7 @@ type ButtonProps = {
   title: string;
   addClasses?: string[];
   clickFunc?: () => void;
+  type?: "button" | "submit" | "reset";
 };
 
 const Button = ({ title, addClasses, clickFunc }: ButtonProps) => {

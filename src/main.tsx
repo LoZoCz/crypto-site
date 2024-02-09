@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "./assets/scss/main.scss";
 import Home from "./pages/Home/Home.tsx";
 import Login from "./pages/Login/Login.tsx";
+// import LoginTest from "./pages/Login/LoginTest.tsx";
 import Register from "./pages/Register/Register.tsx";
 import About from "./pages/About/About.tsx";
 import NotFound from "./pages/NotFound/NotFound.tsx";

@@ -1,7 +1,6 @@
 import logo from "../../../assets/images/icons/icon.svg";
 import { socials, siteLinks } from "../utils/footerLinks";
 import Button from "../../../components/Button";
-import UserInput from "../../../components/UserInput";
 import UserLink from "../../../components/UserLink";
 
 const Footer = () => {
@@ -43,9 +42,9 @@ const Footer = () => {
             Newsletter
           </label>
           <div className="newsletter__form-uses">
-            <UserInput
+            <input
               type="email"
-              addClasses={["newsletter__form-inp"]}
+              className="newsletter__form-inp userInput"
               placeholder="Wprowadź swój mail"
               id="newsletter-inp"
               name="newsletter"
