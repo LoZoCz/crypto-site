@@ -5,6 +5,7 @@ import { useState } from "react";
 import UserLink from "../../components/UserLink";
 import MainLayout from "../../layouts/MainLayout";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Loader from "../../components/Loader";
 
 type LoginFieldsTypes = {
   email: string;
@@ -15,13 +16,19 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setError,
+    formState: { errors, isSubmitting },
   } = useForm<LoginFieldsTypes>();
 
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const onSubmit: SubmitHandler<LoginFieldsTypes> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginFieldsTypes> = async (data) => {
+    try {
+      await new Promise((r) => setTimeout(r, 1000));
+      console.log(data);
+    } catch (error) {
+      setError("root", { message: "Coś poszło nie tak" });
+    }
   };
 
   return (
@@ -33,12 +40,13 @@ const Login = () => {
         >
           <h1 className="login__main-title h1">Witamy z powrotem!</h1>
           <div className="login__main-inpBox">
-            <div className="login__main-loginWrapper">
-              <div className="login__main-loginInpBox">
+            <div className="login__main-mailWrapper">
+              <div className="login__main-mailInpBox">
                 <input
                   type="text"
-                  placeholder="Login"
-                  id="login-inp"
+                  placeholder="E-mail"
+                  id="email-inp"
+                  autoComplete="email"
                   className="login__main-textInp userInput"
                   {...register("email", {
                     required: "E-mail wymagane",
@@ -87,9 +95,13 @@ const Login = () => {
             </div>
           </div>
           <div className="login__main-btnBox">
+            {errors.root && (
+              <p className="login__main-formError">{errors.root.message}</p>
+            )}
             <Button
-              title="Zaloguj"
+              title={isSubmitting ? <Loader /> : "Zaloguj się"}
               type="submit"
+              disabled={isSubmitting}
               addClasses={["login__main-btn", "primary-btn", "h4"]}
             />
             <UserLink

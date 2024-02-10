@@ -2,10 +2,32 @@ import logo from "../../../assets/images/icons/icon.svg";
 import { socials, siteLinks } from "../utils/footerLinks";
 import Button from "../../../components/Button";
 import UserLink from "../../../components/UserLink";
+import { useForm, SubmitHandler } from "react-hook-form";
+import Loader from "../../../components/Loader";
+
+type NewsletterFieldsTypes = {
+  email: string;
+};
 
 const Footer = () => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<NewsletterFieldsTypes>();
+
+  const onSubmit: SubmitHandler<NewsletterFieldsTypes> = async (data) => {
+    try {
+      await new Promise((r) => setTimeout(r, 10000));
+      console.log(data);
+    } catch (error) {
+      setError("root", { message: "Coś poszło nie tak" });
+    }
+  };
+
   return (
-    <section className="main__foot glassyBg">
+    <footer className="main__foot glassyBg">
       <div className="main__foot-content">
         <div className="main__foot-logo">
           <img
@@ -37,7 +59,10 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <form className="main__foot-form newsletter__form" action="">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="main__foot-form newsletter__form"
+        >
           <label className="newsletter__form-label h4" htmlFor="newsletter-inp">
             Newsletter
           </label>
@@ -46,17 +71,29 @@ const Footer = () => {
               type="email"
               className="newsletter__form-inp userInput"
               placeholder="Wprowadź swój mail"
+              autoComplete="email"
               id="newsletter-inp"
-              name="newsletter"
+              {...register("email", {
+                required: "E-mail wymagane",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Podany e-mail jest nieprawidłowy",
+                },
+              })}
             />
             <Button
-              title="Zasubskrybuj"
+              title={isSubmitting ? <Loader size="small" /> : "Zasubskrybuj"}
+              type="submit"
+              disabled={isSubmitting}
               addClasses={["newsletter__form-btn", "secondary-btn", "p"]}
             />
+            {errors.email && (
+              <p className="newsletter__form-error">{errors.email.message}</p>
+            )}
           </div>
         </form>
       </div>
-    </section>
+    </footer>
   );
 };
 

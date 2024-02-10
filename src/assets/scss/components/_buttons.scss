@@ -14,6 +14,12 @@
   &:hover {
     background-color: $color-secondary;
   }
+
+  &:disabled {
+    background-color: lighten($color-secondary, 15%);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 .primary-btn {
@@ -34,6 +40,10 @@
 
   &:hover::after {
     transform: translate(0.25rem, -0.25rem);
+
+    @include mobile {
+      transform: translate(0rem, 0rem);
+    }
   }
 }
 
@@ -56,6 +66,9 @@
 
   &:hover::after {
     transform: translate(0.25rem, -0.25rem);
+    @include mobile {
+      transform: translate(0rem, 0rem);
+    }
   }
 
   &:hover {
