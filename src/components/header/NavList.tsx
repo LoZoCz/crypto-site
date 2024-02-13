@@ -88,12 +88,12 @@ const NavList = () => {
             ))}
             <li className="main__nav-item">
               <Button
-                title="Register"
+                title="Rejestracja"
                 addClasses={["main__nav-btn", "register-btn", "primary-btn"]}
                 clickFunc={() => navigate("/register")}
               />
               <Button
-                title="Login"
+                title="Logowanie"
                 addClasses={["main__nav-btn", "register-btn", "primary-btn"]}
                 clickFunc={() => navigate("/login")}
               />

@@ -18,13 +18,13 @@ const HeroSection = () => {
         </p>
         <div className="hero__sect-btn-wrapper">
           <Button
-            title="About us"
+            title="O nas"
             addClasses={["hero__sect-btn", "primary-btn", "h4"]}
             clickFunc={() => navigate("/about")}
           />
 
           <Button
-            title="Explore"
+            title="Krypto"
             addClasses={["hero__sect-btn", "secondary-btn", "h4"]}
             clickFunc={() => navigate("/cryptoList")}
           />
