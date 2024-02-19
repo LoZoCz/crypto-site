@@ -1,0 +1,63 @@
+@use "../../../abstracts" as *;
+
+.offer__sect {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+
+  &-title {
+    max-width: 20ch;
+  }
+
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 26rem);
+    place-items: center;
+    gap: 4rem;
+
+    @include tablet {
+      grid-template-columns: repeat(1, 35rem);
+      grid-template-rows: repeat(3, 1fr);
+      align-self: center;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+
+  &-card {
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        background-image: url("src/assets/images/pictures/LineEffectCard#{$i}.svg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &-title,
+    &-text {
+      text-align: center;
+    }
+  }
+
+  &-icon {
+    width: 8rem;
+    aspect-ratio: 1;
+
+    @include mobile {
+      width: 6rem;
+    }
+  }
+}

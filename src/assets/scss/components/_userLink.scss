@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+.userLink {
+  color: $color-text;
+  text-decoration: underline;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: lighten($color-accent, 25%);
+  }
+}

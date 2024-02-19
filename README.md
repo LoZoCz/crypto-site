@@ -1,67 +1,65 @@
-# Kryptowaluty
+# CipherPulse
 
-## Wprowadzenie
+## Introduction
 
-Projekt "Kryptowaluty" zapewnia użytkownikowi informacje o różnych kryptowalutach, umożliwiając przeglądanie pełnej listy oraz szczegółowych danych dotyczących każdej z nich.
+The 'CipherPulse' project provides the user with information on various cryptocurrencies, allowing them to view a full list and details of each.
 
-## Opis Ogólny Projektu
+## General Description of the Project
 
-Projekt składa się z dwóch głównych elementów: listy kryptowalut oraz stron dedykowanych poszczególnym kryptowalutom. Użytkownik może przeglądać ogólne informacje na temat każdej kryptowaluty oraz zobaczyć wykres wartości.
+The project consists of three main elements: a list of cryptocurrencies, a list of exchanges and pages dedicated to each cryptocurrency or exchange. The user can view general information about each cryptocurrency and see a chart of the value.
 
-## Funkcjonalności
+## Functionality
 
-### Lista Kryptowalut
+### List of cryptocurrencies
 
-Na stronie głównej projektu użytkownik może przeglądać listę kryptowalut. Informacje są pobierane dynamicznie z zewnętrznego API, co gwarantuje aktualność danych.
+On the main page of the project, the user can view the list of cryptocurrencies. The information is dynamically downloaded from an external API, ensuring that the data is up-to-date.
 
-### Strona Kryptowaluty
+### Cryptocurrency page
 
-Po wybraniu konkretnej kryptowaluty z listy, użytkownik zostanie przeniesiony na dedykowaną stronę. Tam znajdzie podstawowe dane o kryptowalucie, takie jak symbol, aktualna cena, czy ilość dostępnych jednostek.
+After selecting a specific cryptocurrency from the list, the user will be taken to a dedicated page. There he will find basic data about the cryptocurrency, such as the symbol, the current price or the number of available units.
 
-### Wykres Wartości Kryptowaluty
+### Cryptocurrency Value Chart
 
-Na stronie kryptowaluty dostępny jest interaktywny wykres, prezentujący historię zmiany wartości kryptowaluty w wybranym okresie czasu.
+On the cryptocurrency page, an interactive graph is available, showing the history of the change in the value of the cryptocurrency over a selected period of time.
 
-## Implementacja
+## Implementation
 
-### Technologie
+### Technologies
 
-Projekt został zrealizowany przy użyciu technologii:
+The project was implemented using technologies:
 
 - Frontend: React TypeScript, SCSS
-- Komunikacja z API kryptowalut: Fetch API, Axios
+- Cryptocurrency API communication: Axios
 
-### Pobieranie Danych z API
+### Downloading data from the API
 
-Dane o kryptowalutach są pobierane z publicznego API, co umożliwia bieżącą aktualizację informacji.
+Cryptocurrency data is downloaded from the public API to keep the information up to date.
 
-### Wyświetlanie Listy Kryptowalut
+### Displaying the Cryptocurrency List
 
-Lista kryptowalut jest generowana dynamicznie na podstawie danych pobranych z API. Użytkownik może filtrować i sortować kryptowaluty według różnych kryteriów.
+The list of cryptocurrencies is generated dynamically based on the data downloaded from the API. The user can filter and sort cryptocurrencies according to various criteria.
 
-### Strona Kryptowaluty
+### Cryptocurrency page
 
-Strona kryptowaluty zawiera podstawowe informacje na temat wybranej jednostki, prezentowane w czytelnej formie. Dane są prezentowane w formie komponentów, co ułatwia rozbudowę i modyfikację strony.
+The cryptocurrency page contains basic information about the selected entity, presented in an easy-to-read format. The data is presented in the form of components, making it easy to expand and modify the page.
 
-### Wykres Wartości
+### Value chart
 
-Do generowania wykresów wykorzystano odpowiedni framework umożliwiający interaktywną prezentację danych historycznych dotyczących wartości kryptowaluty.
+A suitable framework has been used to generate graphs, enabling the interactive presentation of historical data on the value of the cryptocurrency.
 
-## Interfejs Użytkownika
+## User interface
 
-Interfejs został zaprojektowany w sposób intuicyjny i responsywny, dostosowany do różnych urządzeń.
+The interface was designed in an intuitive and responsive way, adapted to different devices.
 
-## Instrukcja Użytkowania
+## User Manual
 
-1. **Strona Główna:**
+1 **Home page:**.
 
-   - Przeglądaj listę kryptowalut.
-   - Kliknij na nazwę kryptowaluty, aby przejść do jej dedykowanej strony.
+- Browse the list of cryptocurrencies.
+- Click on the name of the cryptocurrency to go to its dedicated page.
 
-2. **Strona Kryptowaluty:**
-   - Znajdź podstawowe informacje o wybranej kryptowalucie.
-   - Sprawdź interaktywny wykres wartości w różnych okresach czasu.
+2. **Cryptocurrency page:**.
+   - Find basic information about the selected cryptocurrency.
+   - Check out the interactive graph of values over different time periods.
 
-Projekt jest otwarty na rozwój, dlatego każda propozycja ulepszenia czy nowej funkcji jest mile widziana.
-
-Grafika pokazowa: https://www.figma.com/file/oT4suGEkmCmKrvAa818X4T/Crypto-Site?type=design&node-id=0-1&mode=design&t=iRtWEwXWOQtFUs1q-0
+The project is open for development, so any suggestion for an improvement or new feature is welcome.

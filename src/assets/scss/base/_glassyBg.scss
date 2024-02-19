@@ -1,0 +1,7 @@
+@use "../abstracts/index" as *;
+
+.glassyBg {
+  background: color-mix(in srgb, $color-secondary 30%, transparent);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
