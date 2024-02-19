@@ -9,11 +9,10 @@ type MediaProviderProps = {
 };
 
 const MediaContext = createContext<MediaContextProps>({
-  windowWidth: 0, // Domyślna szerokość
+  windowWidth: 0,
 });
 const MediaContextProvider = ({ children }: MediaProviderProps) => {
   const [windowWidth, setWindowWidth] = useState(() => {
-    // Ustawienie początkowej szerokości, może być 0 lub inna wartość domyślna
     return window.innerWidth || 0;
   });
 

@@ -4,11 +4,11 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "./assets/scss/main.scss";
 import Home from "./pages/Home/Home.tsx";
 import Login from "./pages/Login/Login.tsx";
-// import LoginTest from "./pages/Login/LoginTest.tsx";
 import Register from "./pages/Register/Register.tsx";
 import About from "./pages/About/About.tsx";
 import NotFound from "./pages/NotFound/NotFound.tsx";
 import { MediaContextProvider } from "./context/MediaContext.tsx";
+import CryptoList from "./pages/CryptoList/CryptoList.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" />
-          <Route path="/cryptoList" />
+          <Route path="/cryptoList" element={<CryptoList />} />
           <Route path="/cryptoDetails/:id" />
           <Route path="/exchangeList" />
           <Route path="/exchangeDetails/:id" />
@@ -37,13 +37,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 //TODO responsywnosc na mniejsze ekrany (mniejsza wysokosc ekranu)
 
-//TODO strona `o nas` z komentarzami
+//TODO na stronie 'o nas' zawrzyj informacje o przebiegu projektu (dokaladnie to w pliku src/pages/About/utils/TimelineData.ts)
+
+//TODO strona z krypto i giełdami
+//TODO!! teraz zrob liste krypto
+
+//TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
 
 //TODO dodac opcje logowania na stronie
 //TODO dodac opcje rejestracji na stronie
 
 //TODO strona dashboardu uzytkownika
-
-//TODO strona z krypto i giełdami
-
-//TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
