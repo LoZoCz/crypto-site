@@ -1,0 +1,52 @@
+@use '../../abstracts/' as *;
+
+.crypto__list {
+    padding-bottom: 2rem;
+    row-gap: 4rem;
+
+    .main__table {
+        border-radius: 1.5rem;
+        border-collapse: collapse;
+
+        thead {
+            @media only screen and (max-width: 640px) {
+                display: none;
+            }
+        }
+
+        td {
+            padding: 1.25rem;
+
+            @media only screen and (max-width: 640px) {
+                display: block;
+            }
+        }
+
+        .main__table-head-item {
+            font-weight: 500;
+            background: color-mix(in srgb, $color-background 30%, transparent);
+        }
+
+        &-body {
+            tr:nth-of-type(even) {
+                background: color-mix(
+                    in srgb,
+                    $color-secondary 10%,
+                    transparent
+                );
+            }
+
+            svg {
+                vertical-align: middle;
+            }
+
+            @media only screen and (max-width: 640px) {
+                td::before {
+                    content: attr(data-cell) ': ';
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
