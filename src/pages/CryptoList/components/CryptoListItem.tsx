@@ -1,38 +1,32 @@
-import ArrowUp from './ArrowUp'
+import { CryptoDataObject } from '../../../utils/types'
 
 type CryptoListItemProps = {
     key: number
+    data: CryptoDataObject | null
 }
 
-const CryptoListItem = ({ ...props }: CryptoListItemProps) => {
+const CryptoListItem = ({ data, ...props }: CryptoListItemProps) => {
     return (
         <tr
             {...props}
             onClick={() => console.log('clicked')}
-            className="crypto__list-main-item main__table-body"
+            className="list__body-row"
         >
-            <td data-cell="nazwa" className="main__table-item">
-                Kryptowaluta
+            <td data-cell="nazwa" className="list__row-item">
+                {data?.name}
             </td>
 
-            <td
-                data-cell="cena"
-                className="main__table-item table__item-icon p"
-            >
-                <ArrowUp />
-                $40000.00
+            <td data-cell="cena" className="list__row-item table__item-icon p">
+                ${data?.current_price}
             </td>
-            <td data-cell="1h %" className="main__table-item p">
-                0.27%
+            <td data-cell="ostatnie 24h" className="list__row-item p">
+                {data?.low_24h}
             </td>
-            <td
-                data-cell="kapitalizacja rynkowa"
-                className="main__table-item p"
-            >
-                $983547738543.00
+            <td data-cell="kapitalizacja rynkowa" className="list__row-item p">
+                ${data?.market_cap}
             </td>
-            <td data-cell="ostatnie 7 dni" className="main__table-item p">
-                GRAPH
+            <td data-cell="całkowity zasób" className="list__row-item p">
+                {data?.total_supply ? data?.total_supply : '-----'}
             </td>
         </tr>
     )

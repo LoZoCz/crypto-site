@@ -4,49 +4,81 @@
     padding-bottom: 2rem;
     row-gap: 4rem;
 
-    .main__table {
-        border-radius: 1.5rem;
-        border-collapse: collapse;
-
-        thead {
-            @media only screen and (max-width: 640px) {
-                display: none;
-            }
+    &-title {
+        @media only screen and (max-width: 780px) {
+            text-align: center;
         }
+    }
+
+    .list {
+        border-radius: 1rem;
+        border-collapse: collapse;
 
         td {
             padding: 1.25rem;
 
-            @media only screen and (max-width: 640px) {
+            @media only screen and (max-width: 780px) {
                 display: block;
             }
         }
 
-        .main__table-head-item {
-            font-weight: 500;
-            background: color-mix(in srgb, $color-background 30%, transparent);
-        }
+        &__head {
+            @media only screen and (max-width: 780px) {
+                display: none;
+            }
 
-        &-body {
-            tr:nth-of-type(even) {
+            &-row {
+                font-weight: 500;
                 background: color-mix(
                     in srgb,
-                    $color-secondary 10%,
+                    $color-background 30%,
                     transparent
                 );
             }
+        }
 
-            svg {
-                vertical-align: middle;
-            }
+        &__body {
+            &-row {
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+                overflow: hidden;
 
-            @media only screen and (max-width: 640px) {
-                td::before {
-                    content: attr(data-cell) ': ';
-                    text-transform: capitalize;
-                    font-weight: 500;
+                &:nth-of-type(even) {
+                    background: color-mix(
+                        in srgb,
+                        $color-background 15%,
+                        transparent
+                    );
+                }
+
+                &:hover {
+                    background: color-mix(
+                        in srgb,
+                        $color-accent 10%,
+                        transparent
+                    );
                 }
             }
+
+            &-error {
+                text-align: center;
+                padding: 1rem;
+            }
         }
+
+        @media only screen and (max-width: 780px) {
+            td::before {
+                content: attr(data-cell) ': ';
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
     }
 }
