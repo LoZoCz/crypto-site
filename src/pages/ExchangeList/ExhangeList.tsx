@@ -13,3 +13,5 @@ const ExhangeList = () => {
 }
 
 export default ExhangeList
+
+//TODO!! zrob cala liste z danymi z api tak jak z krypto

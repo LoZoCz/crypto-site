@@ -36,6 +36,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 //? dodaj jakies animacje i upiekszenia strony
 
+//? dodaj animacje przejscia pomedzy podstronami
+
 //TODO responsywnosc na mniejsze ekrany (mniejsza wysokosc ekranu)
 
 //TODO na stronie 'o nas' zawrzyj informacje o przebiegu projektu (dokaladnie to w pliku src/pages/About/utils/TimelineData.ts)
