@@ -9,6 +9,7 @@ import About from './pages/About/About.tsx'
 import NotFound from './pages/NotFound/NotFound.tsx'
 import { MediaContextProvider } from './context/MediaContext.tsx'
 import CryptoList from './pages/CryptoList/CryptoList.tsx'
+import ExhangeList from './pages/ExchangeList/ExhangeList.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -22,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     <Route path="/dashboard" />
                     <Route path="/cryptoList" element={<CryptoList />} />
                     <Route path="/cryptoDetails/:id" />
-                    <Route path="/exchangeList" />
+                    <Route path="/exchangeList" element={<ExhangeList />} />
                     <Route path="/exchangeDetails/:id" />
                     <Route path="/*" element={<NotFound />} />
                 </Routes>
@@ -40,7 +41,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 //TODO na stronie 'o nas' zawrzyj informacje o przebiegu projektu (dokaladnie to w pliku src/pages/About/utils/TimelineData.ts)
 
 //TODO strona z krypto i giełdami
-//TODO!! teraz zrob liste krypto (stylizacja jest, teraz tylko dane z api)
+//TODO!! teraz zrob liste giełd (stylizacja jest, teraz tylko dane z api)
 
 //TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
 

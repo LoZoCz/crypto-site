@@ -7,6 +7,8 @@ type UseAxiosRes<T> = {
     error: string
 }
 
+axios.defaults.baseURL = 'https://api.coingecko.com/api/v3/'
+
 const useAxios = <T>(url: string): UseAxiosRes<T> => {
     const [response, setResponse] = useState<T | null>(null)
     const [loading, setLoading] = useState(false)

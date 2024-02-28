@@ -4,12 +4,10 @@ type ErrorCellProps = {
 
 const ErrorCell = ({ err }: ErrorCellProps) => {
     return (
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{err}</td>
-            <td></td>
+        <tr className="list__body-error">
+            <td className="err-cell h4" colSpan={6}>
+                {err}
+            </td>
         </tr>
     )
 }

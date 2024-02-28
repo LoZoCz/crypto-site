@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import MainLayout from '../../layouts/MainLayout'
-import CryptoListItem from './components/CryptoListItem'
 import Button from '../../components/Button'
 import useAxios from '../../hooks/useAxios'
 import { CryptoDataObject } from '../../utils/types'
-import ErrorCell from './components/ErrorCell'
+import ListBodyRender from './components/ListBodyRender'
 
 const CryptoList = () => {
     const [page, setPage] = useState(1)
 
-    const { response, error } = useAxios<CryptoDataObject[]>(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=false&locale=pl'
+    const { response, error, loading } = useAxios<CryptoDataObject[]>(
+        '/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=150&sparkline=false&locale=pl&precision=4'
     )
 
-    const slicedResponse = response?.slice((page - 1) * 50, page * 50)
+    const slicedResponse = response?.slice((page - 1) * 30, page * 30)
 
     return (
         <MainLayout>
@@ -24,6 +23,7 @@ const CryptoList = () => {
                 <table className="content-grid crypto__list-table list glassyBg">
                     <thead className="list__head">
                         <tr className="list__head-row">
+                            <td className="list__head-item h4">Ikona</td>
                             <td className="list__head-item h4">Nazwa</td>
                             <td className="list__head-item h4">Cena</td>
                             <td className="list__head-item h4">Ostatnie 24h</td>
@@ -36,13 +36,11 @@ const CryptoList = () => {
                         </tr>
                     </thead>
                     <tbody className="list__body">
-                        {slicedResponse &&
-                            slicedResponse.map(
-                                (data: CryptoDataObject, index: number) => (
-                                    <CryptoListItem key={index} data={data} />
-                                )
-                            )}
-                        {error && <ErrorCell err={error} />}
+                        <ListBodyRender
+                            data={slicedResponse || []}
+                            err={error}
+                            loading={loading}
+                        />
                     </tbody>
                 </table>
                 <div className="content-grid crypto__list-pagination">

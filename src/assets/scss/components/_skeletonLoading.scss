@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.skeleton-ani {
+    animation: skeleton-loading 3s ease-in-out infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsla(0, 0, 94%, 0.15%);
+    }
+    50% {
+        background-color: hsla(0, 0, 94%, 0.3%);
+    }
+    100% {
+        background-color: hsla(0, 0, 94%, 0.15%);
+    }
+}
+
+.skeleton {
+    background-color: hsla(0, 0, 94%, 0.15%);
+    border-radius: 0.25rem;
+    @extend .skeleton-ani;
+}
