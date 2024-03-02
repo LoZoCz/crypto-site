@@ -1,0 +1,125 @@
+@use '../../abstracts/' as *;
+
+.exchange__list {
+    padding-bottom: 2rem;
+    row-gap: 4rem;
+
+    &-title {
+        @media only screen and (max-width: 780px) {
+            text-align: center;
+        }
+    }
+
+    .list {
+        border-radius: 1rem;
+        border-collapse: collapse;
+        overflow: hidden;
+
+        td {
+            padding: 1.25rem;
+
+            @media only screen and (max-width: 780px) {
+                display: block;
+            }
+        }
+
+        &__head {
+            @media only screen and (max-width: 780px) {
+                display: none;
+            }
+
+            &-row {
+                font-weight: 500;
+                background: color-mix(
+                    in srgb,
+                    $color-background 30%,
+                    transparent
+                );
+            }
+        }
+
+        &__body {
+            &-row {
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+                overflow: hidden;
+
+                &:nth-of-type(even) {
+                    background: color-mix(
+                        in srgb,
+                        $color-background 15%,
+                        transparent
+                    );
+                }
+
+                &:hover {
+                    background: color-mix(
+                        in srgb,
+                        $color-accent 10%,
+                        transparent
+                    );
+                }
+
+                .list__row {
+                    @media only screen and (max-width: 780px) {
+                        &-item:has(img) {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                        }
+                    }
+
+                    &-icon {
+                        width: 2rem;
+                        aspect-ratio: 1;
+                        display: block;
+                        margin: 0 auto;
+
+                        @media only screen and (max-width: 780px) {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            &-skeleton {
+                &:nth-of-type(even) {
+                    background: color-mix(
+                        in srgb,
+                        $color-background 15%,
+                        transparent
+                    );
+                }
+
+                .list__skeleton-item {
+                    padding: 1.5rem;
+
+                    .skeleton {
+                        height: 1.5rem;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &-error {
+                text-align: center;
+                color: $color-alert;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            td::before {
+                content: attr(data-cell) ': ';
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}

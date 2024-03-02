@@ -43,7 +43,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 //TODO na stronie 'o nas' zawrzyj informacje o przebiegu projektu (dokaladnie to w pliku src/pages/About/utils/TimelineData.ts)
 
 //TODO strona z krypto i giełdami
-//TODO!! teraz zrob liste giełd (stylizacja jest, teraz tylko dane z api)
+//TODO!! zrob sortowanie danych w listach (krypto i giełdy)
+//TODO!! zrob strone poszczegolnej kryptowaluty
 
 //TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
 

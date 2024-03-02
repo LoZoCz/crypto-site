@@ -1,10 +1,10 @@
 import SkeletonRow from '../../../components/loadingElements/SkeletonRow'
-import { CryptoDataObject } from '../../../utils/types'
-import CryptoListItem from './CryptoListItem'
-import ErrorCell from './ErrorCell'
+import { ExchangeDataObject } from '../../../utils/types'
+import ExchangeListItem from '../components/ExhangeListItem'
+import ErrorCell from '../../../components/ErrorCell'
 
 type ListBodyRenderProps = {
-    data: CryptoDataObject[] | null
+    data: ExchangeDataObject[] | null
     err: string
     loading: boolean
 }
@@ -13,8 +13,8 @@ const ListBodyRender = ({ data, err, loading }: ListBodyRenderProps) => {
     return (
         <>
             {data &&
-                data.map((data: CryptoDataObject, index: number) => (
-                    <CryptoListItem key={index} data={data} />
+                data.map((data: ExchangeDataObject, index: number) => (
+                    <ExchangeListItem key={index} data={data} />
                 ))}
             {err && <ErrorCell err={err} />}
             {loading &&

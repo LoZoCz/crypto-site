@@ -3,7 +3,7 @@ import MainLayout from '../../layouts/MainLayout'
 import Button from '../../components/Button'
 import useAxios from '../../hooks/useAxios'
 import { CryptoDataObject } from '../../utils/types'
-import ListBodyRender from './components/ListBodyRender'
+import CryptoListBodyRender from './components/CryptoListBodyRender'
 
 const CryptoList = () => {
     const [page, setPage] = useState(1)
@@ -36,7 +36,7 @@ const CryptoList = () => {
                         </tr>
                     </thead>
                     <tbody className="list__body">
-                        <ListBodyRender
+                        <CryptoListBodyRender
                             data={slicedResponse || []}
                             err={error}
                             loading={loading}

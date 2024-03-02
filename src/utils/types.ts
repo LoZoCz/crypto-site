@@ -23,6 +23,21 @@ export type CryptoDataObject = {
     atl: number
     atl_change_percentage: number
     atl_date: string
-    roi: null | number // Może być null lub liczba
+    roi: null | number
     last_updated: string
+}
+
+export type ExchangeDataObject = {
+    id: string
+    name: string
+    year_established: number
+    country: string
+    description: string
+    url: string
+    image: string
+    has_trading_incentive: boolean
+    trust_score: number
+    trust_score_rank: number
+    trade_volume_24h_btc: number
+    trade_volume_24h_btc_normalized: number
 }
