@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { CryptoDataObject } from '../../../utils/types'
 
 type CryptoListItemProps = {
@@ -6,12 +7,14 @@ type CryptoListItemProps = {
 }
 
 const CryptoListItem = ({ data, ...props }: CryptoListItemProps) => {
+    const navigate = useNavigate()
+    const handleClick = () => {
+        console.log('clicked')
+        navigate(`/exchanges/${data?.id}`)
+    }
+
     return (
-        <tr
-            {...props}
-            onClick={() => console.log('clicked')}
-            className="list__body-row"
-        >
+        <tr {...props} onClick={() => handleClick()} className="list__body-row">
             <td data-cell="ikona" className="list__row-item">
                 <img
                     src={data?.image}
@@ -27,7 +30,10 @@ const CryptoListItem = ({ data, ...props }: CryptoListItemProps) => {
             <td data-cell="cena" className="list__row-item table__item-icon p">
                 €{data?.current_price}
             </td>
-            <td data-cell="ostatnie 24h" className="list__row-item p">
+            <td
+                data-cell="ostatnie 24h (najnizsza)"
+                className="list__row-item p"
+            >
                 €{data?.low_24h}
             </td>
             <td data-cell="kapitalizacja rynkowa" className="list__row-item p">

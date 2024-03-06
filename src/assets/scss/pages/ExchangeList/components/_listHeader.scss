@@ -1,0 +1,12 @@
+@use '../../../abstracts' as *;
+
+.list__head {
+    @media only screen and (max-width: 780px) {
+        display: none;
+    }
+
+    &-row {
+        font-weight: 500;
+        background: color-mix(in srgb, $color-background 30%, transparent);
+    }
+}

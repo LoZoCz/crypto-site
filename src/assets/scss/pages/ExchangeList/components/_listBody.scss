@@ -1,0 +1,58 @@
+@use '../../../abstracts' as *;
+
+.list__body {
+    &-row {
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+        overflow: hidden;
+
+        &:nth-of-type(even) {
+            background: color-mix(in srgb, $color-background 15%, transparent);
+        }
+
+        &:hover {
+            background: color-mix(in srgb, $color-accent 10%, transparent);
+        }
+
+        .list__row {
+            @media only screen and (max-width: 780px) {
+                &-item:has(img) {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
+
+            &-icon {
+                width: 2rem;
+                aspect-ratio: 1;
+                display: block;
+                margin: 0 auto;
+
+                @media only screen and (max-width: 780px) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &-skeleton {
+        &:nth-of-type(even) {
+            background: color-mix(in srgb, $color-background 15%, transparent);
+        }
+
+        .list__skeleton-item {
+            padding: 1.5rem;
+
+            .skeleton {
+                height: 1.5rem;
+                width: 100%;
+            }
+        }
+    }
+
+    &-error {
+        text-align: center;
+        color: $color-alert;
+    }
+}

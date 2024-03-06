@@ -10,23 +10,26 @@ import NotFound from './pages/NotFound/NotFound.tsx'
 import { MediaContextProvider } from './context/MediaContext.tsx'
 import CryptoList from './pages/CryptoList/CryptoList.tsx'
 import ExhangeList from './pages/ExchangeList/ExhangeList.tsx'
+import { AnimatePresence } from 'framer-motion'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <MediaContextProvider>
             <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/dashboard" />
-                    <Route path="/cryptoList" element={<CryptoList />} />
-                    <Route path="/cryptoDetails/:id" />
-                    <Route path="/exchangeList" element={<ExhangeList />} />
-                    <Route path="/exchangeDetails/:id" />
-                    <Route path="/*" element={<NotFound />} />
-                </Routes>
+                <AnimatePresence mode="wait">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/dashboard" />
+                        <Route path="/cryptoList" element={<CryptoList />} />
+                        <Route path="/cryptoDetails/:id" />
+                        <Route path="/exchangeList" element={<ExhangeList />} />
+                        <Route path="/exchangeDetails/:id" />
+                        <Route path="/*" element={<NotFound />} />
+                    </Routes>
+                </AnimatePresence>
             </Router>
         </MediaContextProvider>
     </React.StrictMode>

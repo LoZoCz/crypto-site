@@ -9,10 +9,10 @@ const ExhangeList = () => {
     const [page, setPage] = useState(1)
 
     const { response, error, loading } = useAxios<ExchangeDataObject[]>(
-        '/exchanges?per_page=150'
+        '/exchanges?per_page=100'
     )
 
-    const slicedResponse = response?.slice((page - 1) * 30, page * 30)
+    const slicedResponse = response?.slice((page - 1) * 20, page * 20)
 
     return (
         <MainLayout>
@@ -61,5 +61,3 @@ const ExhangeList = () => {
 }
 
 export default ExhangeList
-
-//TODO!! zrob cala liste z danymi z api tak jak z krypto

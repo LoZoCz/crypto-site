@@ -5,7 +5,7 @@ import JoinUsSection from './components/JoinUsSection'
 import OfferSection from './components/OfferSection'
 import MainLayout from '../../layouts/MainLayout'
 
-function App() {
+function Home() {
     return (
         <MainLayout>
             <main className="main-grid">
@@ -19,4 +19,4 @@ function App() {
     )
 }
 
-export default App
+export default Home

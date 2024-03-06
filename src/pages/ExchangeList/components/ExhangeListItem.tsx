@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { ExchangeDataObject } from '../../../utils/types'
 
 type ExchangeListItemProps = {
@@ -6,12 +7,14 @@ type ExchangeListItemProps = {
 }
 
 const ExchangeListItem = ({ data, ...props }: ExchangeListItemProps) => {
+    const navigate = useNavigate()
+    const handleClick = () => {
+        console.log('clicked')
+        navigate(`/exchanges/${data?.id}`)
+    }
+
     return (
-        <tr
-            {...props}
-            onClick={() => console.log('clicked')}
-            className="list__body-row"
-        >
+        <tr {...props} onClick={() => handleClick()} className="list__body-row">
             <td data-cell="ikona" className="list__row-item">
                 <img
                     src={data?.image}
