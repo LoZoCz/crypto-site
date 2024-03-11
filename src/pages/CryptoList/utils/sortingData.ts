@@ -1,4 +1,4 @@
-export type SortingTemplate = {
+export type CryptoSortingTemplate = {
     name: string
     current_price: string
     low_24h: string
@@ -6,7 +6,7 @@ export type SortingTemplate = {
     market_cap: string
 }
 
-export const sortingTemplate: SortingTemplate = {
+export const sortingTemplate: CryptoSortingTemplate = {
     name: 'default',
     current_price: 'default',
     low_24h: 'default',
@@ -14,7 +14,7 @@ export const sortingTemplate: SortingTemplate = {
     market_cap: 'default',
 }
 
-export type sortingElement =
+export type cryptoSortingElement =
     | 'name'
     | 'current_price'
     | 'low_24h'

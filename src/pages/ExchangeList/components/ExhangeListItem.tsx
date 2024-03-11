@@ -10,7 +10,7 @@ const ExchangeListItem = ({ data, ...props }: ExchangeListItemProps) => {
     const navigate = useNavigate()
     const handleClick = () => {
         console.log('clicked')
-        navigate(`/exchanges/${data?.id}`)
+        navigate(`/exchangeDetails/${data?.id}`)
     }
 
     return (

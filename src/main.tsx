@@ -11,6 +11,7 @@ import { MediaContextProvider } from './context/MediaContext.tsx'
 import CryptoList from './pages/CryptoList/CryptoList.tsx'
 import ExhangeList from './pages/ExchangeList/ExhangeList.tsx'
 import { AnimatePresence } from 'framer-motion'
+import CryptoPage from './pages/CryptoPage/CryptoPage.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -24,7 +25,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         <Route path="/register" element={<Register />} />
                         <Route path="/dashboard" />
                         <Route path="/cryptoList" element={<CryptoList />} />
-                        <Route path="/cryptoDetails/:id" />
+                        <Route
+                            path="/cryptoDetails/:id"
+                            element={<CryptoPage />}
+                        />
                         <Route path="/exchangeList" element={<ExhangeList />} />
                         <Route path="/exchangeDetails/:id" />
                         <Route path="/*" element={<NotFound />} />

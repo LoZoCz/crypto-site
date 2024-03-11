@@ -4,11 +4,11 @@ import Button from '../../components/Button'
 import useAxios from '../../hooks/useAxios'
 import { CryptoDataObject } from '../../utils/types'
 import CryptoListBodyRender from './components/CryptoListBodyRender'
-import SortingArrows from './components/SortingArrows'
+import SortingArrows from '../../components/SortingArrows'
 import {
     sortingTemplate,
-    sortingElement,
-    SortingTemplate,
+    cryptoSortingElement,
+    CryptoSortingTemplate,
 } from './utils/sortingData'
 import { orderBy } from 'lodash'
 
@@ -31,9 +31,9 @@ const CryptoList = () => {
             return slicedResponse || []
         }
 
-        const key = (Object.keys(sorted) as Array<keyof SortingTemplate>).find(
-            (k) => sorted[k] !== 'default'
-        )
+        const key = (
+            Object.keys(sorted) as Array<keyof CryptoSortingTemplate>
+        ).find((k) => sorted[k] !== 'default')
 
         if (!key) return slicedResponse
 
@@ -42,7 +42,7 @@ const CryptoList = () => {
         return orderBy(slicedResponse, [key], [order])
     }, [slicedResponse, sorted])
 
-    const handleSort = (sortEle: sortingElement) => {
+    const handleSort = (sortEle: cryptoSortingElement) => {
         setSorted((prev) => {
             if (prev[sortEle] === 'asc') {
                 return {
@@ -62,9 +62,6 @@ const CryptoList = () => {
             }
         })
     }
-
-    // !! TODO - zrob z tego hooka abym mogl z niego korzystac w calej aplikacji
-    // !! TODO - ogolnie usprawnij sortowanie danych bo nie jest ono najlepsze
 
     return (
         <MainLayout>

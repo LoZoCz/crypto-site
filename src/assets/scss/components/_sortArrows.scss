@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+
+.list__head-sortBtn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    .sorting__arrows {
+        --arrows-size: 12px;
+
+        display: flex;
+        flex-direction: column;
+        height: calc(var(--arrows-size) * 2);
+
+        svg {
+            width: var(--arrows-size);
+            aspect-ratio: 1;
+            transition: stroke 200ms ease-in-out;
+
+            &.sorted {
+                stroke: $color-accent;
+            }
+        }
+    }
+}
