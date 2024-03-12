@@ -10,7 +10,7 @@ const CryptoListItem = ({ data, ...props }: CryptoListItemProps) => {
     const navigate = useNavigate()
     const handleClick = () => {
         console.log('clicked')
-        navigate(`/cryptoDetails/${data?.id}`)
+        navigate(`/${data?.id}`)
     }
 
     return (

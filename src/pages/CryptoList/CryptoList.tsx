@@ -12,13 +12,19 @@ import {
 } from './utils/sortingData'
 import { orderBy } from 'lodash'
 
+import mockData from './utils/mockCryptoList.json'
+
 const CryptoList = () => {
     const [page, setPage] = useState(1)
     const [sorted, setSorted] = useState(sortingTemplate)
 
-    const { response, error, loading } = useAxios<CryptoDataObject[]>(
-        '/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&sparkline=false&locale=pl&precision=6'
-    )
+    // const { response, error, loading } = useAxios<CryptoDataObject[]>(
+    //     '/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&sparkline=false&locale=pl&precision=6'
+    // )
+
+    const response = mockData
+    const error = ''
+    const loading = false
 
     const slicedResponse = response?.slice((page - 1) * 20, page * 20)
 

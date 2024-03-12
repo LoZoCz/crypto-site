@@ -1,15 +1,16 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 body {
-  background: url("src/assets/images/pictures/bg-effect.svg"), $color-background;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $color-text;
-  font-family: $font-inter-regular;
-  min-height: 100vh;
+    background: url('src/assets/images/pictures/bg-effect.svg'),
+        $color-background;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $color-text;
+    font-family: $font-inter-regular;
+    min-height: 100vh;
 }
 
 html,
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }

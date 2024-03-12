@@ -25,12 +25,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         <Route path="/register" element={<Register />} />
                         <Route path="/dashboard" />
                         <Route path="/cryptoList" element={<CryptoList />} />
-                        <Route
-                            path="/cryptoDetails/:id"
-                            element={<CryptoPage />}
-                        />
+                        <Route path="/:id" element={<CryptoPage />} />
                         <Route path="/exchangeList" element={<ExhangeList />} />
-                        <Route path="/exchangeDetails/:id" />
+                        <Route path="/:id" />
                         <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </AnimatePresence>
