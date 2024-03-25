@@ -27,7 +27,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         <Route path="/cryptoList" element={<CryptoList />} />
                         <Route path="/:id" element={<CryptoPage />} />
                         <Route path="/exchangeList" element={<ExhangeList />} />
-                        <Route path="/:id" />
                         <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </AnimatePresence>
@@ -35,24 +34,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </MediaContextProvider>
     </React.StrictMode>
 )
-
-//? jesli to mozliwe popracuj nad aniamcja navbara oraz observerem na scroll
-
-//? dodaj jakies animacje i upiekszenia strony
-
-//? dodaj animacje przejscia pomedzy podstronami
-
-//TODO responsywnosc na mniejsze ekrany (mniejsza wysokosc ekranu)
-
-//TODO na stronie 'o nas' zawrzyj informacje o przebiegu projektu (dokaladnie to w pliku src/pages/About/utils/TimelineData.ts)
-
-//TODO strona z krypto i giełdami
-//TODO!! zrob sortowanie danych w listach (krypto i giełdy)
-//TODO!! zrob strone poszczegolnej kryptowaluty
-
-//TODO strona dla szczegolnych informacji o kryptowalutach i giełdach
-
-//TODO dodac opcje logowania na stronie
-//TODO dodac opcje rejestracji na stronie
-
-//TODO strona dashboardu uzytkownika

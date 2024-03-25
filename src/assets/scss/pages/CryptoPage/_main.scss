@@ -7,11 +7,103 @@
         gap: 2rem;
         min-height: $sectionSize;
         padding-bottom: 1rem;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
 
     &-info,
     &-chart {
         padding: 1rem;
         border-radius: 1.5rem;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    &-titleContainer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &-desc {
+        font-size: 85%;
+
+        a {
+            text-decoration: none;
+            color: $color-accent;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-infoBox {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    &-socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+
+        @include mobile {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+
+    &-chart {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &-priceChange {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        div > p {
+            margin-top: 1rem;
+        }
+    }
+
+    &-timeSpanBox {
+        width: fit-content;
+        margin-inline: auto;
+        border-radius: 999rem;
+        overflow: hidden;
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: $color-accent;
+            color: $color-text;
+            border: none;
+            outline: none;
+            border-left: 1px solid $color-background;
+            cursor: pointer;
+            transition: background-color 200ms ease-in-out;
+
+            &:hover {
+                background-color: darken($color-accent, 10%);
+            }
+
+            &.active-btn {
+                background-color: darken($color-accent, 20%);
+            }
+        }
     }
 }

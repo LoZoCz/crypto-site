@@ -1,0 +1,39 @@
+@use '../../../abstracts' as *;
+
+$color-reddit: #ff4500;
+$color-github: #333;
+$color-facebook: #4267b2;
+$color-twitter: #1da1f2;
+$color-telegram: #2aabee;
+$color-homepage: $color-accent;
+
+$color-link-backgrounds: (
+    reddit: $color-reddit,
+    github: $color-github,
+    facebook: $color-facebook,
+    twitter: $color-twitter,
+    telegram: $color-telegram,
+    homepage: $color-homepage,
+);
+@mixin hover-effect($color) {
+    &:hover {
+        background-color: darken($color, 15%);
+    }
+}
+
+.crypto__page-social {
+    display: flex;
+    gap: 0.5rem;
+    color: $color-text;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999rem;
+    transition: background-color 200ms ease-in-out;
+
+    @each $link, $background-color in $color-link-backgrounds {
+        &.#{$link} {
+            background-color: $background-color;
+            @include hover-effect($background-color);
+        }
+    }
+}
